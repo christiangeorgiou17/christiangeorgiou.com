@@ -1,0 +1,37 @@
+
+
+/* ==========================================================================
+   Scrollbar styles
+   ==========================================================================*/
+
+
+/* Firefox */
+.scroll-container, html {
+  scrollbar-width: auto;
+  scrollbar-color: var(--accent) var(--bg-primary);
+  overflow-y: auto;
+}
+
+/* WebKit syntax for Chrome, Safari, and Edge */
+/* The entire scrollbar area */
+.scroll-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* The background track */
+.scroll-container::-webkit-scrollbar-track {
+  background: var(--bg-primary);                        
+  border-radius: 8px;
+}
+
+/* The draggable thumb slider */
+.scroll-container::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+  border: 2px solid var(--border-colour);
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);                        
+}
