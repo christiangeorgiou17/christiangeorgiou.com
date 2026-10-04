@@ -480,10 +480,44 @@ section h2 {
 }
 
 .details-container details p {
+    margin-bottom: 0;
+}
+.details-container details div,
+.process-list {
     padding-top: 1rem;
     overflow: hidden;
     margin-bottom: 0;
 }
+
+
+.process-list {
+    list-style: none;
+    counter-reset: process-counter;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-left: 0;
+}
+
+.process-list li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 2rem;
+    counter-increment: process-counter;
+}
+
+.process-list li::before {
+    content: counter(process-counter) ".";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums; /* Prevents text layout shifting */
+}
+
 
 
 

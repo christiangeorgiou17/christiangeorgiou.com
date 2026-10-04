@@ -98,12 +98,10 @@ function calculateAge() {
 
 document.querySelectorAll("details").forEach((details) => {
     const summary = details.querySelector("summary");
-    let innerElement;
-    if (details.querySelector("p")) {
-        innerElement = details.querySelector("p");
-    } else {
-        return;
-    }
+
+    let innerElement = summary.nextElementSibling;
+    if (!innerElement) { return; }
+
     let isAnimating = false;
 
     summary.addEventListener("click", (e) => {
